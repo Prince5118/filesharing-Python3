@@ -1,0 +1,66 @@
+
+2019-06-28 11:50:02.186645
+deleting a sharedrecord
+Traceback (most recent call last):
+  File "/root/pjlogin/fus-3/fus/script.py", line 45, in <module>
+    if item.expirydate<now:
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'str'
+2019-06-28 11:55:01.767758
+deleting a sharedrecord
+Traceback (most recent call last):
+  File "/root/pjlogin/fus-3/fus/script.py", line 45, in <module>
+    if item.expirydate<now:
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'str'
+2019-06-28 12:00:03.177095
+deleting a sharedrecord
+Traceback (most recent call last):
+  File "/root/pjlogin/fus-3/fus/script.py", line 45, in <module>
+    if item.expirydate<now:
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'str'
+2019-06-28 12:05:03.415053
+deleting a sharedrecord
+/root/pjlogin/fus-3/fus/upload/Private/C9QdD0XxYD5csnRWUG9xSkJNmvWDET3KxQ7IpNmiJdQ33xzs.encrypted
+Traceback (most recent call last):
+  File "/root/pjlogin/fus-3/fus/script.py", line 73, in <module>
+    text = str(now.replace(microsecond=0))+' '+'-'+' Deleted_File '+item
+TypeError: replace() takes no keyword arguments
+2019-06-28 12:10:02.326092
+deleting a sharedrecord
+/root/pjlogin/fus-3/fus/upload/Private/VEkDsudlU8Rlb93vlnubcZu5WncueOfSqgubBLoko0kBycio.encrypted
+Traceback (most recent call last):
+  File "/root/pjlogin/fus-3/fus/script.py", line 73, in <module>
+    text = str(now.replace(microsecond=0))+' '+'-'+' Deleted_File '+item
+TypeError: replace() takes no keyword arguments
+2019-06-28 12:15:01.805384
+2019-06-28 12:20:02.248011
+2019-06-28 12:25:01.712217
+deleting a sharedrecord
+2019-06-28 12:30:02.280828
+deleting a sharedrecord
+Traceback (most recent call last):
+  File "/root/pjlogin/fus-3/fus/script.py", line 45, in <module>
+    if item.expirydate<now:
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'str'
+2019-06-28 12:35:01.869412
+deleting a sharedrecord
+Traceback (most recent call last):
+  File "/root/pjlogin/fus-3/fus/script.py", line 56, in <module>
+    if item.expirydate<now:
+TypeError: '<' not supported between instances of 'datetime.datetime' and 'str'
+2019-06-28 12:39:01.406935
+deleting a sharedrecord
+deleting a sharedrecord
+deleting a sharedrecord
+deleting a sharedrecord
+deleting a sharedrecord
+deleting a sharedrecord
+deleting a sharedrecord
+deleting a sharedrecord
+2019-06-28 12:40:01.973852
+/root/pjlogin/fus-3/fus/upload/Private/dgzwmK9k6uEPdczlaTTE8NGqPq1t5vV4AyzgMHFx5YHUfQ9i.encrypted
+/root/pjlogin/fus-3/fus/upload/Private/mhM4ojY9QU6NwXJf33CiKmW89ZOcgRvAkt1xaUXyd4dxXvLS.encrypted
+/root/pjlogin/fus-3/fus/upload/Private/mocHo8DrcdrRiIMUBWMse4baHIKRIJfp7vpPc56EgiHCo1xF.encrypted
+2019-06-28 12:41:01.587181
+2019-06-28 12:42:02.055701
+2019-06-28 17:59:01.509679
+2019-06-28 18:00:01.961735
