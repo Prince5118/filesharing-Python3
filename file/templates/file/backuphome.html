@@ -1,0 +1,148 @@
+{% extends 'file/base.html' %}
+
+{% block title %}
+    <title>
+      Home
+    </title>
+{% endblock %}
+
+{% block style %}
+  <style>
+    table
+    {
+      margin: auto;
+    }
+    #menudiv
+    {
+      width: auto;
+      height: auto;
+      text-align: center;
+      vertical-align: bottom;
+    }
+    #button1
+    {
+
+      width: 270px;
+      height: 30px;
+      top: 80%;
+    }
+    #text1
+    {
+      text-align: center;
+      position: absolute;
+      left: 40%;
+    }
+    #items
+    {
+      width: auto;
+      height: auto;
+      text-align: center;
+      vertical-align: bottom;
+      top: 80%;
+    }
+    #box1
+    {
+    /* background-color: lightgrey; */
+    background-color: white;
+    position: relative;
+    width: 300px;
+    left: 40%;
+    height:300px;
+    /* border: 5px solid green; */
+    border: 2px solid black;
+    padding: 10px;
+    margin: 00px;
+    }
+    #box2
+    {
+    background-color: white;
+    position: relative;
+    width: 300px;
+    left: 40%;
+    height:200px;
+    border: 5px  black;
+    padding: 10px;
+    margin: 0px;
+    }
+  </style>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% endblock %}
+
+{% block content %}
+  <div id="menudiv">
+    <h3> List of Uploaded Files </h3>
+  </div>
+
+
+  <!--
+    <table class="w3-table-all w3-hoverable" >
+    <tr>
+      <th>File Name</th>
+    </tr>
+    {% for file in files %}
+      <tr>
+        <td><a href="/file/{{user.username}}/{{file.name}}">{{file.name}}</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+  -->
+
+ 
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+ 
+ 
+
+
+       <!--ADDING DOWNLOAD BUTTON -->
+  <form action="/download" method="POST" id="box1">
+    {% csrf_token %}
+    {% for file in files %}
+        <input type="radio" id="file{{  forloop.counter }}" name="filename" value="{{ file.name }}" required="required" />
+        <label for=file{{  forloop.counter }}>{{file.name}}</label><br>
+    {% endfor %}
+    <br>
+    <input type="submit" value ="Download" id="button1" />
+    <input type="submit" value = "Share" formaction="/sharefile" id="button1" />
+    <br>
+    <br>
+    <!-- Paginator-->
+    {% if files.has_previous %}
+        <a href="?page=1" style="text-decoration:none; font-size: 18px";>&raquo;First </a>
+        <a href="?page={{ files.previous_page_number }}" style="text-decoration:none; font-size: 18px">&emsp;&emsp;&emsp;&emsp;Previous </a>
+    {% endif %}
+    {% if files.has_next %}
+        <a href="?page={{ files.next_page_number }}" style="text-decoration:none; font-size: 18px">Next</a>
+        <a href="?page={{ files.paginator.num_pages }}" style="text-decoration:none; font-size: 18px">&emsp;&emsp;&emsp;&emsp;Last &raquo;</a>
+    {% endif %}
+  </form>
+ 
+
+
+
+  <!-- WARNING MESSAGE-->
+  <h3 align=center>{{ warn_msg }}</h3>
+
+
+<!-- UPLOAF SHARE AND LOGOUT BUTTON -->
+  <div id = "box2">
+  <form action="/upload" method="GET">
+      <input type="submit" id ="button1" value="Upload"/>
+    </form>
+  </br>
+
+ 
+
+  <form action="/logout" method="GET">
+    <input type="submit" id ="button1" value="Logout" />
+  </form>
+  </br>
+  </br>
+<!-- END OF BUTTONS MENU-->
+
+<h1 align = "left">You are logged in as {{user.username}} </h1>
+{% endblock %}

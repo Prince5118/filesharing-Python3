@@ -1,0 +1,37 @@
+{% extends 'file/base.html' %}
+
+{% block title %}
+    <title>
+      User Authorization
+    </title>
+{% endblock %}
+
+{% block style %}
+ <style>
+    #container
+    {
+      text-align: center;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div id = "container">
+
+<form action="/filesharing" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="nameoflink" value="{{nameoflink}}">
+ 
+  Enter User name    <input type="text" name="username" required>
+  <br>
+  Enter Password Key <input type="text" name="hashedkey" required>
+  <br><br>
+  <input type="submit" value="Submit" >
+  <!-- onclick="window.open('https://www.google.com')" -->
+</form>
+
+</body>
+</html>
+
+  </div>
+{% endblock %} 

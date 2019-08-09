@@ -1,0 +1,39 @@
+{% extends 'file/base.html' %}
+
+{% block title %}
+    <title>
+      Download File
+    </title>
+{% endblock %}
+
+{% block style %}
+  <style>
+   
+  </style>
+{% endblock %}
+
+{% block content %}
+
+
+    <form action="/Private" method="POST">
+      {% csrf_token %}
+
+        <input type="hidden" name="ekey" value="{{sharedobject.ekey}}">
+        <input type="hidden" name="linkidentifier" value="{{sharedobject.linkidentifier}}">
+        <input type="hidden" name="copyname" value="{{sharedobject.copyname}}">
+        <input type="hidden" name="copypath" value="{{sharedobject.copypath}}">
+        <input type="hidden" name="originalname" value="{{sharedobject.originalname}}">
+        <input type="hidden" name="sender" value="{{sharedobject.sender}}">
+        <input type="hidden" name="reciever" value="{{sharedobject.reciever}}">
+
+        <div class="form-group mt-0 pt-0 d-flex justify-content-end">
+        <input type="submit" value="Download Me!" > </div>
+
+
+
+        <h1> This is a one time download.<br> This file is shared to you by user {{sharedobject.sender}}<br>Filename-{{sharedobject.originalname}}</h1>
+
+    </form>
+
+ 
+{% endblock %}
